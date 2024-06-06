@@ -28,9 +28,9 @@ def get_schoolkid():
     try:
         return Schoolkid.objects.get(full_name__contains=name)
     except Schoolkid.DoesNotExist:
-        print(f'Проверьте написание имени и фамилии ученика {name} - такого нет в базе учеников школы')
+        raise ValueError(f'Ученик {name} не найден в базе учеников школы')
     except Schoolkid.MultipleObjectsReturned:
-        print(f'По Вашему запросу {name} нашлось несколько учеников, уточните запрос')
+        raise ValueError(f'Уточните запрос для ученика {name}, нашлось несколько учеников')
 
 
 def fix_marks():
