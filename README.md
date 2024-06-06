@@ -27,7 +27,7 @@ https://github.com/devmanorg/e-diary
 
 Для проверки наличия ученика в базе данных:
 
-        name_check()
+        get_schoolkid()
 
 Для исправления плохих оценок:
     
